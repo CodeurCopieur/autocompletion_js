@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+#suggestionsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+visibility: hidden; /* Invisible mais toujours dans le flux du document */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease, transform 0.5s ease;
+}
+
+#suggestionsList.visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s; /* Annule le délai lorsque l'élément devient visible */
+}
+
+#suggestionsList li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+#suggestionsList li:last-child {
+  border-bottom: none;
+}
+
+#suggestionsList li:hover {
+  background-color: #f0f0f0;
+}
+
+#ecoleDetails {
+
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+visibility: hidden; /* De même, initialement invisible */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: visibility 0s linear 0.5s, opacity 0.5s ease, transform 0.5s ease;
+}
+
+#ecoleDetails.details-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+#ecoleDetails h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+#ecoleDetails p {
+  margin: 5px 0;
+  color: #666;
+}
